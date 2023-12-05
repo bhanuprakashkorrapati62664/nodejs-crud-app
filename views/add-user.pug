@@ -1,0 +1,43 @@
+extends layout 
+
+block content 
+    h1 Add User Info
+    form(method="POST" action="/user/add")
+        #form-group 
+            label Last Name:
+            input.form-control(name="lastName",type="text")
+        #form-group 
+            label First Name:
+            input.form-control(name="firstName",type="text")
+        #form-group 
+            label Date Of Birth:
+            input.form-control(name="dateOfBirth",type="date")
+        #form-group 
+            label Address1:
+            textarea.form-control(name="address1")
+        #form-group 
+            label Address2:
+            textarea.form-control(name="address2")
+        #form-group 
+            label City:
+            input.form-control(name="city",type="text")
+        #form-group 
+            label Postal Code:
+            input.form-control(name="postalCode",type="text")
+        #form-group 
+            label Country:
+            input.form-control(name="country",type="text")
+        #form-group 
+            label Phone Number:
+            input.form-control(name="phoneNumber",type="text")
+        #form-group 
+            label Email:
+            input.form-control(name="email",type="text")
+        #form-group 
+            label User Notes:
+            textarea.form-control(name="notes")
+        br
+        input.btn.btn-primary(type="submit",value="submit")
+        
+        
+        

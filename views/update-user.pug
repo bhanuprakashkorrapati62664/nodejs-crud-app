@@ -1,0 +1,23 @@
+extends layout 
+
+block content 
+    h1 Update User Info
+    if users && users.length > 0
+        ul.list-group 
+            each user in users
+                li.list-group-item 
+                    | #{user.firstName} #{user.lastName} - #{user.email}
+                    br
+                    | Address: #{user.address1}, #{user.address2}, #{user.city}, #{user.postalCode}, #{user.country}
+                    br
+                    | Phone: #{user.phoneNumber}
+                    br
+                    | Date of Birth: #{user.dateOfBirth.toDateString()}
+                    br
+                    | Notes: #{user.notes}
+                    br
+                    a.btn.btn-secondary.mr-2(style='margin-right: 8px;' href='/user/edit/'+user.id) Edit User
+                    a.btn.btn-danger.delete-user(href="#",data-id=user._id) Delete 
+    else
+        p No users found
+
